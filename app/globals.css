@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/opensans-400.ttf") format("truetype"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/opensans-600.ttf") format("truetype"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url("/fonts/opensans-700.ttf") format("truetype"); }
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 400; font-display: swap; src: url("/fonts/lora-400.ttf") format("truetype"); }
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 600; font-display: swap; src: url("/fonts/lora-600.ttf") format("truetype"); }
+
+@utility scrollbar-thin { scrollbar-width: thin; }
+@utility scrollbar-none { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+@utility scrollbar-gutter-stable { scrollbar-gutter: stable; }
+
+:root {
+  color-scheme: light;
+  --background: #f7f6f5;
+  --foreground: #010000;
+  --card: #ffffff;
+  --card-foreground: #010000;
+  --popover: #ffffff;
+  --popover-foreground: #010000;
+  --primary: #ff9800;
+  --primary-foreground: #010000;
+  --secondary: #fedc5b;
+  --secondary-foreground: #65361c;
+  --muted: #f7f6f5;
+  --muted-foreground: #65361c;
+  --accent: #fedc5b;
+  --accent-foreground: #65361c;
+  --destructive: #a52d20;
+  --border: #ded3c8;
+  --input: #ded3c8;
+  --ring: #ff9800;
+  --radius: .75rem;
+  --sidebar: #f7f6f5;
+  --sidebar-foreground: #010000;
+  --sidebar-primary: #65361c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fedc5b;
+  --sidebar-accent-foreground: #65361c;
+  --sidebar-border: #ded3c8;
+  --sidebar-ring: #ff9800;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "Open Sans", Arial, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: "Lora", Georgia, serif; }
+h1, h2, h3, label, input, select, textarea, button, .brand-meta { font-family: "Open Sans", Arial, sans-serif; }
+input, select, textarea { min-width: 0; width: 100%; font-size: 1rem; }
+button { cursor: pointer; }
+button:disabled { cursor: default; }
+button:focus-visible, a:focus-visible { outline: 2px solid #ff9800; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
